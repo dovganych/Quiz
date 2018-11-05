@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./src/index.css">
+  <title>Quiz</title>
+</head>
+<body>
+	<header>
+		
+	</header>
+
+	<main>
+		<section>
+
+		<div id="star-quize-box">
+			<label for="player-name-btn">Enter your nickname:</label>
+			<input type="text" name="player-name" id="player-name-btn"><br>
+			<button id="star-quize">Start Quiz!</button>
+		</div>
+
+		<form method="post" action id="quiz-form">
+			<label for="amount">Number of Questions:</label>
+		  <input type="number" name="amount" id="amount" value="5" max="50" min="1">
+		  <br>
+
+			<label for="categories">Select Category:</label>
+		  <select id="categories">
+		  	<option value="any">Any Category</option>
+			</select>
+			<br>
+
+			<label for="difficulty">Select Difficulty: </label>
+			<select id="difficulty">
+				<option value="any">Any Difficulty</option>
+				<option value="easy">Easy</option>
+				<option value="medium">Medium</option>
+				<option value="hard">Hard</option>
+			</select>
+			<br>
+
+			<label for="type">Select Type:</label>
+			<select id="type">
+				<option value="any">Any Type</option>>
+				<option value="multiple">Multiple Choice</option>>
+				<option value="boolean">True / False</option>
+			</select>
+			<br>
+
+			<button type="submite" id="submite">Generate quize</button>
+		</form>
+		<div id="questions">
+			<main id="questions-box"></main>
+			<button id="check-button">Check answers</button>
+		</div>
+
+		<div id="result">
+			<header>
+				<i class="far fa-user-circle"></i>
+				<h4 id="player-name">Player name</h4>
+			</header>
+			<main>
+				<h2 id="player-result">10/10</h2>
+				<section id="player-rating">
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star-half-alt"></i>
+				</section>
+			</main>
+			<footer>
+				<button id="restart"><i class="fas fa-sync-alt"></i>Restart</button>
+				<button id="create-new-quize"><i class="fas fa-plus"></i>Create new Quize</button>
+			</footer>
+		</div>
+	</section>
+	</main>
+
+	<footer>
+		
+	</footer>
+
+  <script src="src/main.js"></script>
+  <script type="module" src="src/TrivialApi.js"></script>
+</body>
+</html>
