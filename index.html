@@ -18,13 +18,13 @@
 	<main>
 		<section>
 
-		<div id="star-quize-box">
-			<label for="player-name-btn">Enter your nickname:</label>
-			<input type="text" name="player-name" id="player-name-btn"><br>
-			<button id="star-quize">Start Quiz!</button>
+		<div id="starQuizeBlock">
+			<label for="playerNameBtn">Enter your nickname:</label>
+			<input type="text" name="player-name" id="playerNameBtn"><br>
+			<button id="startQuizButton">Start Quiz!</button>
 		</div>
 
-		<form method="post" action id="quiz-form">
+		<form method="post" action id="quizForm">
 			<label for="amount">Number of Questions:</label>
 		  <input type="number" name="amount" id="amount" value="5" max="50" min="1">
 		  <br>
@@ -55,17 +55,17 @@
 			<button type="submite" id="submite">Generate quize</button>
 		</form>
 		<div id="questions">
-			<main id="questions-box"></main>
-			<button id="check-button">Check answers</button>
+			<main id="questionsBlock"></main>
+			<button id="checkButton">Check answers</button>
 		</div>
 
-		<div id="result">
+		<div id="resultBlock">
 			<header>
 				<i class="far fa-user-circle"></i>
-				<h4 id="player-name">Player name</h4>
+				<h4 id="playerName">Player name</h4>
 			</header>
 			<main>
-				<h2 id="player-result">10/10</h2>
+				<h2 id="playerResult">10/10</h2>
 				<section id="player-rating">
 					<i class="fas fa-star"></i>
 					<i class="fas fa-star"></i>
@@ -76,7 +76,7 @@
 			</main>
 			<footer>
 				<button id="restart"><i class="fas fa-sync-alt"></i>Restart</button>
-				<button id="create-new-quize"><i class="fas fa-plus"></i>Create new Quize</button>
+				<button id="createNewQuize"><i class="fas fa-plus"></i>Create new Quize</button>
 			</footer>
 		</div>
 	</section>
