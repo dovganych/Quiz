@@ -11,30 +11,33 @@
   <title>Quiz</title>
 </head>
 <body>
-	<header>
-		
+	<header class="header flex-box">
+		<nav class="flex-box">
+			<a class="flex-box header-a" href="#">Quiz</a>
+			<a class="flex-box header-a" href="#">Random Quiz</a>
+			<a class="flex-box header-a" href="#">About</a>
+			<a class="flex-box header-a" href="#">Help</a>
+		</nav>
+		<a class="flex-box header-a" href="#">
+			<i class="fas fa-user-astronaut"></i>
+			<span>Profile</span>
+		</a>
 	</header>
-
-	<main>
-		<section>
-
+	<main class="main">
 		<div id="starQuizeBlock">
 			<label for="playerNameBtn">Enter your nickname:</label>
 			<input type="text" name="player-name" id="playerNameBtn"><br>
 			<button id="startQuizButton">Start Quiz!</button>
 		</div>
-
 		<form method="post" action id="quizForm">
 			<label for="amount">Number of Questions:</label>
-		  <input type="number" name="amount" id="amount" value="5" max="50" min="1">
-		  <br>
-
+			  <input type="number" name="amount" id="amount" value="5" max="50" min="1">
+			  <br>
 			<label for="categories">Select Category:</label>
-		  <select id="categories">
-		  	<option value="any">Any Category</option>
+			 <select id="categories">
+			  	<option value="any">Any Category</option>
 			</select>
 			<br>
-
 			<label for="difficulty">Select Difficulty: </label>
 			<select id="difficulty">
 				<option value="any">Any Difficulty</option>
@@ -43,7 +46,6 @@
 				<option value="hard">Hard</option>
 			</select>
 			<br>
-
 			<label for="type">Select Type:</label>
 			<select id="type">
 				<option value="any">Any Type</option>>
@@ -51,21 +53,19 @@
 				<option value="boolean">True / False</option>
 			</select>
 			<br>
-
 			<button type="submite" id="submite">Generate quize</button>
 		</form>
 		<div id="questions">
 			<main id="questionsBlock"></main>
 			<button id="checkButton">Check answers</button>
 		</div>
-
 		<div id="resultBlock">
 			<header>
-				<i class="far fa-user-circle"></i>
-				<h4 id="playerName">Player name</h4>
+				<i class="fas fa-user-astronaut"></i>
+				<h4 id="playerName"></h4>
 			</header>
 			<main>
-				<h2 id="playerResult">10/10</h2>
+				<h2 id="playerResult"></h2>
 				<section id="player-rating">
 					<i class="fas fa-star"></i>
 					<i class="fas fa-star"></i>
@@ -79,13 +79,13 @@
 				<button id="createNewQuize"><i class="fas fa-plus"></i>Create new Quize</button>
 			</footer>
 		</div>
-	</section>
 	</main>
-
-	<footer>
-		
+	<footer class="footer flex-box">
+		<nav class="flex-box footer-nav">
+			<a class="flex-box footer-a" href="#"><i class="fab fa-github-alt"></i></a>
+			<a class="flex-box footer-a" href="#"><i class="fab fa-facebook-f"></i></a>
+		</nav>
 	</footer>
-
-  <script type="module" src="src/main.js"></script>
+  <script type="module" src="src/js/main.js"></script>
 </body>
 </html>
