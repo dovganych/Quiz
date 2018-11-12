@@ -11,16 +11,14 @@ export class Quiz {
 
   processQuiz (){
     this.initializeDomElements();
-    this.hideElements(this.$domElements.quizForm, 
-      this.$domElements.questions,
-      this.$domElements.resultBlock);
+    this.trivial.getCategoris((this.selectCategoris).bind(this));
     this.listeningStartQuiz();
   }
 
   initializeDomElements (){
     const elementsArray = ['quizForm', 'questions', 'resultBlock', 'startQuizButton', 'submite',
       'checkButton', 'questionsBlock', 'restart', 'createNewQuize', 'starQuizeBlock',
-      'playerNameBtn', 'playerName', 'playerResult'];
+      'playerNameBtn', 'playerName', 'playerResult', 'formBlock'];
     this.$domElements = elementsArray.reduce((obj, item) => {
       obj[item] = document.getElementById(item);
       return obj;
@@ -45,25 +43,24 @@ export class Quiz {
   listeningStartQuiz (){
     this.$domElements.startQuizButton.addEventListener('click', event => {
       event.stopImmediatePropagation();
-      this.player.nickname = this.$domElements.playerNameBtn.value;
+      this.player.nickname = this.$domElements.playerNameBtn.value || 'anonymous';
       this.hideElements(this.$domElements.starQuizeBlock);
       this.processForm();
     });
   }
 
   processForm (){
-    this.trivial.getCategoris((this.selectCategoris).bind(this));
-    this.showElements(this.$domElements.quizForm);
-    this.listeningSubmit(this.$domElements.quizForm);
+    this.showElements(this.$domElements.formBlock);
+    this.listeningSubmit();
   }
 
-  listeningSubmit (element){
+  listeningSubmit (){
     this.$domElements.submite.addEventListener('click', event => {
       event.stopImmediatePropagation();
       event.preventDefault();
-      this.customedRequest = this.convertUrlData(element);
+      this.customedRequest = this.convertUrlData(this.$domElements.quizForm);
       this.processQuestins();
-      this.hideElements(element);
+      this.hideElements(this.$domElements.formBlock);
     });
   }
 
@@ -146,7 +143,7 @@ export class Quiz {
   }
 
   showElements (...elements){
-    elements.forEach(item => item.style.display = 'block');
+    elements.forEach(item => item.style.display = 'flex');
   }
 
   triggerElements (hideElement, showElement){
@@ -179,10 +176,16 @@ export class Quiz {
     return section;
   }
 
-  createLabel (item){
+  createSpan (text){
+    const span = document.createElement('span');
+    span.innerHTML = text;
+    return span;
+  }
+
+  createLabel (item, index){
     const label = document.createElement('label');
-    label.htmlFor = item;
-    label.innerHTML = item;
+    label.htmlFor = `answers-${index}-${item}`;
+    label.appendChild(this.createSpan(item));
     return label;
   }
 
@@ -191,15 +194,16 @@ export class Quiz {
     input.type = 'radio';
     input.name = `answers-${index}`;
     input.value = item;
-    input.id = item;
+    input.id = `answers-${index}-${item}`;
+    input.style.display = 'none';
     return input;
   }
 
   createAnswersBox (answers, index){
     const div = document.createElement('div');
     answers.forEach(item => {
-      div.appendChild(this.createLabel(item));
       div.appendChild(this.createRadio(item, index));
+      div.appendChild(this.createLabel(item, index));
     });
     return div;
   }
