@@ -24,49 +24,55 @@
 		</a>
 	</header>
 	<main class="main">
-		<div id="starQuizeBlock">
+
+		<div id="starQuizeBlock" class="starQuizeBlock">
 			<label for="playerNameBtn">Enter your nickname:</label>
-			<input type="text" name="player-name" id="playerNameBtn"><br>
+			<input type="text" name="player-name" id="playerNameBtn" class="player-name-btn"><br>
 			<button id="startQuizButton">Start Quiz!</button>
 		</div>
-		<form method="post" action id="quizForm">
-			<label for="amount">Number of Questions:</label>
-			  <input type="number" name="amount" id="amount" value="5" max="50" min="1">
-			  <br>
-			<label for="categories">Select Category:</label>
-			 <select id="categories">
-			  	<option value="any">Any Category</option>
-			</select>
-			<br>
-			<label for="difficulty">Select Difficulty: </label>
-			<select id="difficulty">
-				<option value="any">Any Difficulty</option>
-				<option value="easy">Easy</option>
-				<option value="medium">Medium</option>
-				<option value="hard">Hard</option>
-			</select>
-			<br>
-			<label for="type">Select Type:</label>
-			<select id="type">
-				<option value="any">Any Type</option>>
-				<option value="multiple">Multiple Choice</option>>
-				<option value="boolean">True / False</option>
-			</select>
-			<br>
-			<button type="submite" id="submite">Generate quize</button>
-		</form>
+
+		<div id="formBlock">
+			<form method="post" action id="quizForm">
+				<label for="amount">Number of Questions:</label>
+				  <input type="number" name="amount" id="amount" value="5" max="50" min="1">
+				  <br>
+				<label for="categories">Select Category:</label>
+				 <select id="categories">
+				  	<option value="any">Any Category</option>
+				</select>
+				<br>
+				<label for="difficulty">Select Difficulty: </label>
+				<select id="difficulty">
+					<option value="any">Any Difficulty</option>
+					<option value="easy">Easy</option>
+					<option value="medium">Medium</option>
+					<option value="hard">Hard</option>
+				</select>
+				<br>
+				<label for="type">Select Type:</label>
+				<select id="type">
+					<option value="any">Any Type</option>>
+					<option value="multiple">Multiple Choice</option>>
+					<option value="boolean">True / False</option>
+				</select>
+				<br>
+				<button type="submite" id="submite">Generate quize</button>
+			</form>
+		</div>
+
 		<div id="questions">
-			<main id="questionsBlock"></main>
+			<main id="questionsBlock" class="questions-block"></main>
 			<button id="checkButton">Check answers</button>
 		</div>
-		<div id="resultBlock">
+
+		<div id="resultBlock" class="result-block">
 			<header>
 				<i class="fas fa-user-astronaut"></i>
-				<h4 id="playerName"></h4>
+				<h4 id="playerName">anonymous</h4>
 			</header>
 			<main>
-				<h2 id="playerResult"></h2>
-				<section id="player-rating">
+				<h2 id="playerResult" class=""></h2>
+				<section id="playerRating" class="player-rating">
 					<i class="fas fa-star"></i>
 					<i class="fas fa-star"></i>
 					<i class="fas fa-star"></i>
@@ -79,6 +85,7 @@
 				<button id="createNewQuize"><i class="fas fa-plus"></i>Create new Quize</button>
 			</footer>
 		</div>
+
 	</main>
 	<footer class="footer flex-box">
 		<nav class="flex-box footer-nav">
