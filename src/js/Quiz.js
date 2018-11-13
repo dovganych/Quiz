@@ -18,7 +18,7 @@ export class Quiz {
   initializeDomElements (){
     const elementsArray = ['quizForm', 'questions', 'resultBlock', 'startQuizButton', 'submite',
       'checkButton', 'questionsBlock', 'restart', 'createNewQuize', 'starQuizeBlock',
-      'playerNameBtn', 'playerName', 'playerResult', 'formBlock'];
+      'playerNameBtn', 'playerName', 'playerResult', 'formBlock', 'nickname'];
     this.$domElements = elementsArray.reduce((obj, item) => {
       obj[item] = document.getElementById(item);
       return obj;
@@ -26,7 +26,7 @@ export class Quiz {
   }
 
   selectCategoris (data){
-    const categories = document.getElementById('categories');
+    const categories = document.getElementById('category');
     data.trivia_categories.forEach(item => categories.appendChild(this.createOption(item)));
   }
 
@@ -40,10 +40,15 @@ export class Quiz {
     return Object.entries(data).map(([key, val]) => `${key}=${val}`).join('&');
   }
 
+  updatePlayernickname (){
+    this.player.nickname = this.$domElements.playerNameBtn.value || 'anonymous';
+    this.$domElements.nickname.innerHTML = this.player.nickname;
+  }
+
   listeningStartQuiz (){
     this.$domElements.startQuizButton.addEventListener('click', event => {
       event.stopImmediatePropagation();
-      this.player.nickname = this.$domElements.playerNameBtn.value || 'anonymous';
+      this.updatePlayernickname();
       this.hideElements(this.$domElements.starQuizeBlock);
       this.processForm();
     });
@@ -74,7 +79,7 @@ export class Quiz {
   parseQuestions (data){
     this.player.maxScore = data.results.length;
     data.results.forEach((item, index) => {
-      const answers = item.incorrect_answers.concat(item.correct_answer);
+      const answers = this.shuffleQuestions(item.incorrect_answers.concat(item.correct_answer));
       this.correct_answers.push(item.correct_answer);
       const $section = this.createSection(index);
       this.$domElements.questionsBlock.appendChild($section);
@@ -83,6 +88,10 @@ export class Quiz {
       $section.appendChild(this.createAnswersBox(answers, index));
     });
   }
+
+  shuffleQuestions (questions){
+    return questions.sort(() => Math.random() - Math.random());
+  } 
 
   listeningCheckAnswers (){
     this.$domElements.checkButton.addEventListener('click', event => {
