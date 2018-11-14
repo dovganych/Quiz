@@ -56,7 +56,7 @@ To make a PR follow the next steps:
 	git push origin <topic-branch-name>
 	```
 7.  Open a Pull Request with a clear title and description.
-8.  Fill the [pull request's template](https://github.com/dovganych/Quiz/.github/PULL_REQUEST_TEMPLATE.md).
+8.  Fill the [pull request's template](https://github.com/dovganych/Quiz/blob/master/.github/PULL_REQUEST_TEMPLATE.md).
 9.  Submit pull request.
 
 ## Issues
@@ -66,5 +66,5 @@ In case you have faced with some bugs, or see features that will improve `quiz`,
 1.  Go to the  [Issues](https://github.com/dovganych/Quiz/issues).
 2.  Please, persuade that this issue hasn't been created.
 3.  If you haven't found similar issue, feel free to create new issue
-4.  Fill a [issue template](https://github.com/dovganych/Quiz/.github/ISSUE_TEMPLATE.md).
+4.  Fill a [issue template](https://github.com/dovganych/Quiz/blob/master/.github/ISSUE_TEMPLATE.md).
 5.  Submit issue.
