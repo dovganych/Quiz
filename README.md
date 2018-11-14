@@ -19,6 +19,9 @@ This is quiz-game that based on Trivia API. User during the session can choose c
 
 [See mockmockup for this project](https://wireframepro.mockflow.com/view/Quiz_Wire_Frame)
 
+# Contribution guide
+Check our [Contribution guide](https://github.com/dovganych/Quiz/blob/master/.github/CONTRIBUTING.md) if you want to participate in this project. 
+
 License
 ----
 
