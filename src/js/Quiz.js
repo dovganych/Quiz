@@ -18,7 +18,7 @@ export class Quiz {
   initializeDomElements (){
     const elementsArray = ['quizForm', 'questions', 'resultBlock', 'startQuizButton', 'submite',
       'checkButton', 'questionsBlock', 'restart', 'createNewQuize', 'starQuizeBlock',
-      'playerNameBtn', 'playerName', 'playerResult', 'formBlock', 'nickname'];
+      'playerNameBtn', 'playerName', 'playerResult', 'formBlock', 'nickname', 'playerRating'];
     this.$domElements = elementsArray.reduce((obj, item) => {
       obj[item] = document.getElementById(item);
       return obj;
@@ -126,7 +126,8 @@ export class Quiz {
 
   renderPlayerResult (){
     this.$domElements.playerName.innerHTML = this.player.nickname;
-    this.$domElements.playerResult.innerHTML = `${this.player.result} / ${this.player.maxScore}`;
+    this.$domElements.playerResult.innerHTML = `${this.player.result} / ${this.player.maxScore}`; 
+    this.$domElements.playerRating.style.width = `${this.player.rating}%`;
     this.listeningRestart();
     this.listeningCreateNewQuize();
   }
