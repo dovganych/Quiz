@@ -116,6 +116,14 @@ input + label span {
   border-radius: 1em;
 }
 
+.score span {
+  color: #ffab00;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
 input + label span:hover {
   background-color: #52bea6;
   border-radius: 1em;
@@ -166,19 +174,24 @@ input:checked + label span {
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 6em;
 }
 
 .result-block footer > button {
   margin: 10% 2%;
 }
 
-.player-rating i {
-  font-size: 1.5em;
-  line-height: 1.86;
-  letter-spacing: -2px;
-  text-align: left;
-  color: #ffab00;
-  margin-top: 0;
+.score {
+  display: inline-block;
+  font-size: 2.5em;
+  color: #eef1f7;
+  position: relative;
+}
+
+.score::before,
+.score span::before {
+  content: "\2605\2605\2605\2605\2605";
+  display: block;
 }
 
 .result-block footer i {

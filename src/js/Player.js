@@ -21,7 +21,8 @@ export class Player{
     this._result = result;
   }
   get rating (){
-    return this._rating = (this.result * 100) / this._maxScore;
+    this._rating = (this.result * 100) / this._maxScore;
+    return Math.ceil(this._rating / 10) * 10;
   }
 
   get maxScore (){

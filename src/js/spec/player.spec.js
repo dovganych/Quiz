@@ -9,9 +9,9 @@ describe('should calculate player rating in percentage::', () => {
     expect(player.rating).toEqual(50);
   });
   
-  it('and to be equal 75', () => {
+  it('and to be equal 80', () => {
     player.result = 15;
-    expect(player.rating).toEqual(75);
+    expect(player.rating).toEqual(80);
   });
 });
 
