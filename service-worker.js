@@ -1,4 +1,4 @@
-const cacheName = 'v2';
+const cacheName = 'quiz';
 
 self.addEventListener('activate', event => {
   event.waitUntil(
