@@ -11,26 +11,27 @@
   <title>Quiz</title>
 </head>
 <body>
-	<header class="header flex-box">
-		<nav class="flex-box">
-			<a class="flex-box header-a" href="#">Quiz</a>
+	<header class="header flex-box" id="header">
+		<nav class="flex-box header-nav" id="headerNav">
+			<a class="flex-box header-a" href="./">Quiz</a>
 			<a class="flex-box header-a" href="#">Random Quiz</a>
 			<a class="flex-box header-a" href="#">About</a>
 			<a class="flex-box header-a" href="#">Help</a>
+			<a class="flex-box header-a" href="#" id="toggleButton">
+    			<i class="fa fa-bars"></i>
+ 			</a>
 		</nav>
-		<a class="flex-box header-a" href="#">
+		<a id="userLogo" class="flex-box header-a" href="#">
 			<i class="fas fa-user-astronaut"></i>
 			<span id="nickname">Profile</span>
 		</a>
 	</header>
 	<main class="main">
-
-		<div id="starQuizeBlock" class="starQuizeBlock">
+		<div id="starQuizeBlock" class="star-quize-qlock">
 			<label for="playerNameBtn">Enter your nickname:</label>
 			<input type="text" name="player-name" id="playerNameBtn" class="player-name-btn"><br>
 			<button id="startQuizButton">Start Quiz!</button>
 		</div>
-
 		<div id="formBlock">
 			<form method="post" action id="quizForm" class="form">
 				<label for="amount">Number of Questions:</label>
@@ -59,12 +60,10 @@
 				<button type="submite" id="submite">Generate quize</button>
 			</form>
 		</div>
-
 		<div id="questions">
 			<main id="questionsBlock" class="questions-block"></main>
 			<button id="checkButton">Check answers</button>
 		</div>
-
 		<div id="resultBlock" class="result-block">
 			<header>
 				<i class="fas fa-user-astronaut"></i>
@@ -81,15 +80,15 @@
 				<button id="createNewQuize"><i class="fas fa-plus"></i>Create new Quize</button>
 			</footer>
 		</div>
-
 	</main>
 	<footer class="footer flex-box">
 		<nav class="flex-box footer-nav">
-			<a class="flex-box footer-a" href="#"><i class="fab fa-github-alt"></i></a>
+			<a class="flex-box footer-a" href="https://github.com/dovganych/Quiz" target="_blank"><i class="fab fa-github-alt"></i></a>
 			<a class="flex-box footer-a" href="#"><i class="fab fa-facebook-f"></i></a>
 		</nav>
 	</footer>
   <script type="module" src="src/js/main.js"></script>
+  <script type="text/javascript" src="src/js/breakpoints.js"></script>
   <script src="sw.js"></script>
 </body>
 </html>

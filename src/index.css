@@ -12,18 +12,15 @@
   color: #78829d;
 }
 
-.header > nav {
-  width: 30%;
-}
-
-.header > a {
-  width: 7%;
-}
-
 .header-a {
   background-color: #2f364a;
   text-decoration: none;
   padding: 0 1em;
+}
+
+.header-nav a:last-child {
+  display: none;
+  margin-bottom: 0;
 }
 
 .header-a:link {
@@ -48,7 +45,6 @@
 }
 
 .header > .header-a:last-child {
-  padding-right: 2%;
   background: #55acee;
 }
 
@@ -57,13 +53,13 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  min-height: 554px;
+  min-height: 100vh;
   background-color: #eef1f7;
 }
 
 .main > div {
   height: 80%;
-  min-height: 400px;
+  min-height: 70vh;
   width: 100%;
   margin: 3% 10%;
   padding: 1% 1%;
@@ -74,6 +70,11 @@
   flex-direction: column;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-color: #fff;
+}
+
+.questions-block section div {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .main > div:not(:first-child) {
@@ -244,4 +245,95 @@ input:checked + label span {
 
 .footer-a:active {
   color: #78829d;
+}
+
+@media only screen and (max-width: 600px) {
+  .header-nav a {
+    display: none;
+  }
+
+  .header-nav a:last-child {
+    display: flex;
+  }
+
+  .header.responsive {
+    width: 100%;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .header-nav.responsive {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .header-nav.responsive > a {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 2% 0;
+  }
+
+  .header-nav {
+    width: 80%;
+  }
+
+  .header-a span {
+    display: none;
+  }
+
+  .main > div {
+    height: 90%;
+    min-height: 90vh;
+    width: 100%;
+    margin: 3% 5%;
+  }
+
+  .star-quize-qlock > * {
+    width: 80%;
+    text-align: center;
+  }
+
+  .questions-block section {
+    text-align: center;
+  }
+
+  .questions-block section div {
+    margin: 3% auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .questions-block section div label {
+    margin: 3% auto;
+  }
+
+  .questions-block label:not(:last-of-type)::after {
+    display: none;
+  }
+
+  .main button {
+    width: 80%;
+  }
+
+  .main form button {
+    width: 100%;
+  }
+
+  .result-block footer {
+    flex-direction: column;
+    height: 12em;
+  }
+
+  .result-block footer > button {
+    margin: 2% 0;
+  }
+
+  .footer {
+    justify-content: center;
+  }
+
+  .footer-nav {
+    width: 30%;
+  }
 }
