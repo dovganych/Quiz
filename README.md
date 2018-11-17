@@ -1,7 +1,7 @@
 # Quiz
 
-Quiz is a game for peaple who wants to spent time usefuly for themself, check their knowlage in particular theme, or make competition with friends.
-This is quiz-game that based on Trivia API. User during the session can choose categories, difficulty, type and an amount of questions. In the end of quiz user can review his result.
+A quiz is a game for people who want to spend time to good profitably, check their knowledge in particular subjects or compete with friends. 
+A Quiz-game is based on Trivia API. During the session, a user can choose categories, their difficulty, a type and a number of questions. At the end of a quiz, users can review their results.
 
 # Tech stack: 
 	-Webpack 4 - Webpack is a module bundler
